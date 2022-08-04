@@ -1,7 +1,7 @@
 # My Next.js Template.
 ## Configuration
-- [ ] Next.js
-- [ ] React
+- [x] Next.js
+- [x] React
 - [ ] TypeScript
 - [ ] ESlint
 - [ ] Prettier
