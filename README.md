@@ -6,12 +6,13 @@
 - [x] React
 - [x] TypeScript
 - [x] ESlint
-- [ ] Prettier
+- [x] Prettier
+- [x] Husky, lint-staged
 - [ ] emotion/react
+- [ ] Storybook
 - [ ] Jest
 - [ ] React Testing Library
 - [ ] Playwright
-- [ ] Storybook
 - [ ] Hygen
 - [ ] Swagger
 - [ ] Mock Service Worker
