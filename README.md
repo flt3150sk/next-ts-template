@@ -25,3 +25,8 @@ yarn dev
 ```bash
 npx create-next-app@latest --ts
 ```
+
+### ESLint
+```bash
+yarn add -D eslint-plugin-import eslint-plugin-unused-imports
+```
