@@ -2,7 +2,7 @@
 ## Configuration
 - [x] Next.js
 - [x] React
-- [ ] TypeScript
+- [x] TypeScript
 - [ ] ESlint
 - [ ] Prettier
 - [ ] emotion/react
