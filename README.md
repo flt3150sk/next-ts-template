@@ -3,7 +3,7 @@
 - [x] Next.js
 - [x] React
 - [x] TypeScript
-- [ ] ESlint
+- [x] ESlint
 - [ ] Prettier
 - [ ] emotion/react
 - [ ] Jest
