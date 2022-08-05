@@ -1,0 +1,198 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Sample API",
+    "description": "A short description of API.",
+    "termsOfService": "http://example.com/terms/",
+    "contact": {
+      "name": "API support",
+      "url": "http://www.example.com/support",
+      "email": "sample@gmail.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://dev.sample-server.com/v1",
+      "description": "Development server"
+    },
+    {
+      "url": "https://stg.sample-server.com/v1",
+      "description": "Staging server"
+    },
+    {
+      "url": "https://api.sample-server.com/v1",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/todos": {
+      "get": {
+        "tags": ["todos"],
+        "summary": "Get all Todos.",
+        "description": "Returns an array of Todo model.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Todo"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["todos"],
+        "summary": "Create Todo.",
+        "description": "Returns No Content.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "content": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Todo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/todos/{id}": {
+      "get": {
+        "tags": ["todos"],
+        "summary": "Get Todo by ID.",
+        "description": "Returns an object of Todo model.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Target Todo Id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Todo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["todos"],
+        "summary": "Edit Todo by ID.",
+        "description": "Returns No Content.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Target Todo Id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Todo"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["todos"],
+        "summary": "Delete Todo by ID.",
+        "description": "Returns No Content.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Target Todo Id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Todo": {
+        "title": "Todo",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "todo1"
+          },
+          "title": {
+            "type": "string",
+            "example": "todo1 title"
+          },
+          "content": {
+            "type": "string",
+            "example": "todo1 content"
+          },
+          "isDone": {
+            "type": "boolean",
+            "example": false
+          }
+        }
+      }
+    }
+  }
+}
