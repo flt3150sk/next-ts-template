@@ -7,8 +7,6 @@ import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
   const { data, error } = useAspidaSWR(apiClient.todos);
-  console.log(data);
-  console.log(error);
   return (
     <div className={styles.container}>
       <Head>

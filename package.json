@@ -10,7 +10,7 @@
     "lint:fix": "next lint --fix",
     "format": "prettier --write --ignore-path .gitignore '*.{js,jsx,ts,tsx,json}'",
     "gen:api": "rm -rf ./api && openapi2aspida",
-    "prepare": "husky install & yarn openapi2aspida"
+    "prepare": "husky install & yarn gen:api"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": "eslint --fix",
