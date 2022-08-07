@@ -10,8 +10,8 @@
 - [x] Husky, lint-staged
 - [x] OpenAPI
 - [x] aspida
-- [ ] Mock Service Worker
-- [ ] swr
+- [x] msw
+- [x] swr
 - [ ] emotion/react
 - [ ] Storybook
 - [ ] Jest
