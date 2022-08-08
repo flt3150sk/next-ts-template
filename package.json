@@ -9,7 +9,7 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "format": "prettier --write --ignore-path .gitignore '*.{js,jsx,ts,tsx,json}'",
-    "gen:api": "rm -rf ./api && openapi2aspida",
+    "gen:api": "rm -rf ./src/api && openapi2aspida",
     "prepare": "husky install & yarn gen:api",
     "test": "jest --watch",
     "test:ci": "jest --ci"

@@ -1,11 +1,11 @@
-import { Todo } from '../../api/@types';
+import { Todo } from '../api/@types';
 
 export const modelCreator = {
   todo: (arg?: Partial<Todo>): Todo => {
     return {
-      id: arg?.id ?? 'todoID',
-      title: arg?.title ?? 'todoTitle',
-      content: arg?.content ?? 'todoContent',
+      id: arg?.id ?? 'todo Id',
+      title: arg?.title ?? 'todo title',
+      content: arg?.content ?? 'todo content',
       isDone: arg?.isDone ?? false,
     };
   },

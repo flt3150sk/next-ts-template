@@ -1,5 +1,5 @@
 module.exports = {
-  input: 'api',
+  input: 'src/api',
   outputEachDir: true,
   openapi: { inputFile: './openapi.json' },
 };
