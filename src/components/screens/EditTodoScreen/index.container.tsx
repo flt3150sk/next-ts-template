@@ -1,34 +1,13 @@
-import { useEditTodo } from './index.hooks';
+import useAspidaSWR from '@aspida/swr';
+import { apiClient } from '../../../service/apiClient';
 import { EditTodoScreenPresentaion } from './index.presentation';
 
 type Props = { todoId: string };
 
 export const EditTodoScreen: React.FC<Props> = (props) => {
-  const {
-    isLoading,
-    error,
-    title,
-    onChangeTitle,
-    errorTitle,
-    content,
-    onChangeContent,
-    errorContent,
-    onSubmit,
-  } = useEditTodo(props.todoId);
+  const { data, error } = useAspidaSWR(apiClient.todos._id(props.todoId as string));
 
-  if (isLoading) return <p>loading...</p>;
+  if (!data) return <p>loading...</p>;
   if (error) return <p>Error!!</p>;
-  return (
-    <div>
-      <EditTodoScreenPresentaion
-        title={title}
-        onChangeTitle={onChangeTitle}
-        errorTitle={errorTitle}
-        content={content}
-        onChangeContent={onChangeContent}
-        errorContent={errorContent}
-        onSubmit={onSubmit}
-      />
-    </div>
-  );
+  return <EditTodoScreenPresentaion todoId={data.id} title={data.title} content={data.content} />;
 };

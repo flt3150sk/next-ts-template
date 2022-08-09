@@ -10,7 +10,7 @@ export type TodoFormProps = {
   content: string;
   onChangeContent: FormInputProps['onChange'];
   errorContent: FormInputProps['errMessage'];
-  onSubmit: FormProps['onSubmit'];
+  onSubmit: () => void;
 };
 
 export const TodoForm: React.FC<TodoFormProps> = memo((props) => {

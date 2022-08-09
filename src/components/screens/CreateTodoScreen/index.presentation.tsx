@@ -1,11 +1,14 @@
-import { TodoForm, TodoFormProps } from '../../feature/TodoForm';
+import { TodoForm } from '../../feature/TodoForm';
+import { useCreateTodo } from './hooks';
 
-export type CreateTodoScreenPresentaionProps = Omit<TodoFormProps, 'formTitle'>;
+export type CreateTodoScreenPresentaionProps = {};
 
-export const CreateTodoScreenPresentaion: React.FC<CreateTodoScreenPresentaionProps> = (props) => {
+export const CreateTodoScreenPresentaion: React.FC<CreateTodoScreenPresentaionProps> = () => {
+  const hooks = useCreateTodo();
+
   return (
     <div>
-      <TodoForm formTitle="新規作成" {...props} />
+      <TodoForm formTitle="新規作成" {...hooks} />
     </div>
   );
 };
