@@ -13,10 +13,10 @@
 - [x] msw
 - [x] swr
 - [ ] emotion/react
-- [ ] Storybook
-- [ ] Jest
-- [ ] React Testing Library
-- [ ] Playwright
+- [x] Storybook
+- [x] Jest
+- [x] React Testing Library
+- [ ] Cypress
 - [ ] Hygen
 
 ## Getting Started
