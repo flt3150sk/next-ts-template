@@ -3,6 +3,7 @@
     "next/core-web-vitals",
     "plugin:import/recommended",
     "plugin:import/warnings",
+    "plugin:storybook/recommended",
     "prettier"
   ],
   "plugins": ["unused-imports"],
