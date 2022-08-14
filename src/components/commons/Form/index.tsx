@@ -1,4 +1,5 @@
-import { ButtonHTMLAttributes, memo } from 'react';
+import { ButtonHTMLAttributes, memo, NamedExoticComponent } from 'react';
+import { Input } from './Input';
 
 export type FormProps = {
   title: string;
@@ -6,7 +7,7 @@ export type FormProps = {
   onSubmit: NonNullable<ButtonHTMLAttributes<HTMLButtonElement>['onClick']>;
 };
 
-export const Form: React.FC<FormProps> = memo((props) => {
+export const Form = memo((props) => {
   return (
     <>
       <form>
@@ -18,6 +19,9 @@ export const Form: React.FC<FormProps> = memo((props) => {
       <button onClick={props.onSubmit}>送信する</button>
     </>
   );
-});
+}) as NamedExoticComponent<FormProps> & {
+  Input: typeof Input;
+};
 
 Form.displayName = 'Form';
+Form.Input = Input;
